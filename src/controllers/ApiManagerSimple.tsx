@@ -22,9 +22,19 @@ export class ApiManagerSimple implements ApiManagerSimpleInterface  {
                 rows +=`<tr style='border-top: 1px lightgray solid;border-bottom: 1px lightgray solid'>
                             <th>${todo.userId}</th>
                             <th>${todo.id}</th>
-                            <th>${todo.title}</th>
-                            <th>${todo.completed}</th>
-                        </tr>`
+                            <th>${todo.title}</th>`
+                if (todo.completed){
+                rows +=`<th>
+                            <input type="checkbox" id="${todo.id}" value="${todo.completed}" checked>
+                        </th>
+                    </tr>`
+                }else {
+                    rows +=`<th>
+                            <input type="checkbox" id="${todo.id}" value="${todo.completed}" >
+                        </th>
+                    </tr>`
+                }
+
             }
         });
         rows +="</table>"
