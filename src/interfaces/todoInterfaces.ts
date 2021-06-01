@@ -1,6 +1,9 @@
 export interface ApiManagerInterface {
     fetchData(): Promise<Todos[]>;
 }
+export interface ApiManagerSimpleInterface {
+    fetchData(): Promise<string>;
+}
 export interface TodoClientInterface {
     getTodos(): Promise<Todos[]>;
 }

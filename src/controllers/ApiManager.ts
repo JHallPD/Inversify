@@ -4,7 +4,6 @@ import {ApiManagerInterface} from "../interfaces/todoInterfaces";
 import TYPES from "../types";
 import {controller, httpGet} from 'inversify-express-utils';
 import {TodoClient} from '../service/ApiManager';
-import * as express from 'express';
 
 
 
@@ -16,6 +15,7 @@ export class ApiManager implements ApiManagerInterface  {
 
     @httpGet("/")
     public async fetchData() {
-            return await this.todoClient.getTodos();
+        return await this.todoClient.getTodos();
     }
 }
+
