@@ -1,23 +1,11 @@
 import { injectable } from 'inversify';
 import {Todos} from "../interfaces/todoInterfaces";
 import fetch from "node-fetch";
-
+import "reflect-metadata";
 
 @injectable()
 export class TodoClient {
-    private toDoStorageNew: Todos[] = []
-    private toDoStorage: Todos[] = [  {
-            "userId": 1,
-            "id": 1,
-            "title": "test",
-            "completed": false
-        },
-        {
-            "userId": 1,
-            "id": 2,
-            "title": "test",
-            "completed": false
-        }];
+    private toDoStorage: Todos[] = [];
     public async getTodos(): Promise<Todos[]> {
         try {
             await fetch('https://jsonplaceholder.typicode.com/todos')

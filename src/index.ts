@@ -1,14 +1,10 @@
 import 'reflect-metadata';
 import {InversifyExpressServer} from 'inversify-express-utils';
-import { Container } from 'inversify';
 import * as bodyParser from 'body-parser';
-import TYPES from "./types";
 import "./controllers/ApiManager";
-import {TodoClient} from "./service/ApiManager";
+import container from "./inversify.config";
 
-// load everything needed to the Container
-const container = new Container();
-container.bind<TodoClient>(TYPES.TodoClient).to(TodoClient);
+
 
 // start the server
 const server = new InversifyExpressServer(container);

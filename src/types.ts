@@ -1,6 +1,7 @@
 
 const TYPES = {
-    TodoClient: Symbol("TodoClient")
+    TodoClient: Symbol("TodoClient"),
+    ApiManager: Symbol("ApiManager")
 };
 
 export default TYPES;

@@ -6,7 +6,7 @@
     "strict": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "types": ["reflect-metadata"],
+    "types": ["reflect-metadata", "jest"],
     "esModuleInterop": true,
     "outDir": "dist",
     "experimentalDecorators": true,
